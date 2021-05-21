@@ -1,28 +1,36 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+
+    <v-main>
+      <main-table/>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
+import MainTable from "@/components/main-table";
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+  components: {
+    MainTable
+  },
+
+  data: () => ({
+    desserts1: [{
+      "28670" : {"PROD_ID": "28670", "NAME" : "сумка женская Olivi ол694"},
+      "33468" : {"PROD_ID": "33468", "NAME" : "сумка женская Olivi ол729"},
+      "53363" : {"PROD_ID": "53363", "NAME" : "сумка женская Olivi ол837"},
+    }],
+    desserts2: [
+      {"PROD_ID": "28670", "NAME" : "сумка женская Olivi ол694"},
+      {"PROD_ID": "33468", "NAME" : "сумка женская Olivi ол729"},
+      {"PROD_ID": "53363", "NAME" : "сумка женская Olivi ол837"},
+    ],
+
+    fff:[]
+  }),
+};
+
+</script>
