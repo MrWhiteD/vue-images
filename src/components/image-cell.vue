@@ -31,7 +31,7 @@
 import {ebus} from "@/main";
 
 export default {
-  props:['img_url'],
+  props:['img_url', 'cell_id'],
   name: "image-cell",
   data: () => ({
     model: null,
@@ -39,7 +39,8 @@ export default {
   }),
   created() {
     this.local_img_url = this.img_url
-    ebus.$on('hi', (data) =>{this.local_img_url = data})
+    console.log(this.cell_id)
+    ebus.$on('hi'+this.cell_id, (data) =>{this.local_img_url = data})
   },
   methods:{
     fun() {
